@@ -46,3 +46,10 @@ post '/delete_customer' do
   stylist_id = params.fetch("stylist_id")
   redirect "/stylists/#{stylist_id}"
 end
+
+post '/delete_stylist' do
+  stylist_id = params.fetch('stylist_id')
+  stylist = Stylist.find_stylist_by_id(stylist_id)
+  stylist.delete
+  redirect '/'
+end

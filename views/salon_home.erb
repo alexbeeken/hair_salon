@@ -20,13 +20,19 @@
               <% if customers != [] %>
                 <ul>
                   <% customers.each() do |customer| %>
-                    <li>  
+                    <li>
                       <%= customer.name %>
                     </li>
                   <% end %>
                 </ul>
           <% end %>
          </td>
+         <td>
+           <%= "<form action='/delete_stylist' method='post'>
+              <input type='submit' value='delete'>
+              <input type='hidden' value='#{stylist.id}' name='stylist_id'>
+              </form>" %>
+        </td>
       </tr>
     <% end %>
     <% end %>
@@ -36,7 +42,3 @@
   <input type="text" name="name" placeholder="enter stylist">
   <input type='submit' value="add">
 </form>
-                  
-      
-
-
