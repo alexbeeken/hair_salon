@@ -1,6 +1,16 @@
 require('spec_helper')
 require('stylist')
 
+#### CLASS METHODS
+
+describe('.all') do
+  it 'displays all stylists from the database' do
+    expect(Stylist.all).to(eq([]))
+  end
+end
+
+#### INSTANCE METHODS
+
 describe('#name') do
   it 'displays the name of a stylist' do
     test_stylist = Stylist.new({:name => "Tina", :id => nil})
@@ -16,11 +26,6 @@ describe('#save') do
   end
 end
 
-describe('.all') do
-  it 'displays all stylists from the database' do
-    expect(Stylist.all).to(eq([]))
-  end
-end
 
 describe('#==') do
   it 'compares two stylists correctly' do
@@ -48,7 +53,7 @@ describe('#find_stylist_by_id') do
     expect(Stylist.find_stylist_by_id(test_stylist.id)).to(eq(test_stylist))
   end
 end
-  
+
 describe('#find_stylist_by_name') do
   it 'finds a stylist by their name' do
     test_stylist = Stylist.new({:name => "Tina", :id => nil})

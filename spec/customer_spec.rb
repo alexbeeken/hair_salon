@@ -1,6 +1,16 @@
 require('spec_helper')
 require('customer')
 
+#### CLASS METHODS
+
+describe('.all') do
+  it 'displays all customers from the database' do
+    expect(Customer.all).to(eq([]))
+  end
+end
+
+#### INSTANCE METHODS
+
 describe('#name') do
   it 'displays the name of a customer' do
     test_customer = Customer.new({:name => "Shirley", :stylist_id => 1, :id => nil})
@@ -16,11 +26,6 @@ describe('#save') do
   end
 end
 
-describe('.all') do
-  it 'displays all customers from the database' do
-    expect(Customer.all).to(eq([]))
-  end
-end
 
 describe('#==') do
   it 'compares two customers correctly' do
@@ -41,7 +46,7 @@ describe('#delete') do
   end
 end
 
-  
+
 describe('#find_customer_by_id') do
     it 'finds a customer by their id' do
        test_customer = Customer.new({:name => "Shirley", :stylist_id => 0, :id => nil})
@@ -49,7 +54,7 @@ describe('#find_customer_by_id') do
        expect(Customer.find_customer_by_id(test_customer.id)).to(eq(test_customer))
   end
 end
-  
+
 describe('#find_customer_by_name') do
     it 'finds a customer by their name' do
       test_customer = Customer.new({:name => "Shirley", :stylist_id => 0, :id => nil})
@@ -67,6 +72,3 @@ describe('#get_customers_for_stylist_id') do
     expect(Customer.get_customers_for_stylist_id(1)).to(eq([test_customer]))
   end
 end
-
-
-      

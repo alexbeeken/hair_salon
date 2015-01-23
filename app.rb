@@ -5,13 +5,9 @@ require('./lib/stylist')
 require('pg')
 require('pry')
 
-configure :development do
-set :bind, '0.0.0.0'
-set :port, 3000
-end
-
 DB = PG::Connection.open(:dbname => 'salon')
 
+#### salon_home.erb
 
 get '/' do
   @all_stylists = Stylist.all()
@@ -25,13 +21,14 @@ post '/add_stylist' do
   redirect'/'
 end
 
-post '/add_customer' do
-  name = params.fetch('name')
+post '/delete_stylist' do
   stylist_id = params.fetch('stylist_id')
-  customer = Customer.new({:name => name, :stylist_id => stylist_id,  :id => nil})
-  customer.save
-  redirect "/stylists/#{stylist_id}"
+  stylist = Stylist.find_stylist_by_id(stylist_id)
+  stylist.delete
+  redirect '/'
 end
+
+#### stylist.erb
 
 get '/stylists/:id' do
   id = params.fetch("id")
@@ -40,16 +37,18 @@ get '/stylists/:id' do
   erb(:stylist)
 end
 
+post '/add_customer' do
+  name = params.fetch('name')
+  stylist_id = params.fetch('stylist_id')
+  customer = Customer.new({:name => name, :stylist_id => stylist_id,  :id => nil})
+  customer.save
+  redirect "/stylists/#{stylist_id}"
+end
+
+
 post '/delete_customer' do
   customer = Customer.find_customer_by_id(params.fetch("customer_id").to_i)
   customer.delete
   stylist_id = params.fetch("stylist_id")
   redirect "/stylists/#{stylist_id}"
-end
-
-post '/delete_stylist' do
-  stylist_id = params.fetch('stylist_id')
-  stylist = Stylist.find_stylist_by_id(stylist_id)
-  stylist.delete
-  redirect '/'
 end
