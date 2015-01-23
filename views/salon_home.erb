@@ -1,0 +1,40 @@
+<h1> Welcome to Big City "Salon" </h1>
+
+  <table>
+    <tr>
+      <th>
+        Stylists
+      </th>
+      <th>
+        Customers
+      </th>
+    </tr>
+    <% if @all_stylists != [] %>
+      <% @all_stylists.each() do |stylist| %>
+       <tr>
+        <td>
+          <%= "<a href='/stylists/#{stylist.id}'>#{stylist.name}</a>" %>
+        </td>
+        <td>
+            <% customers = Customer.get_customers_for_stylist_id(stylist.id) %>
+              <% if customers != [] %>
+                <ul>
+                  <% customers.each() do |customer| %>
+                    <li>  
+                      <%= customer.name %>
+                    </li>
+                  <% end %>
+                </ul>
+          <% end %>
+         </td>
+      </tr>
+  </table>
+
+<form action='/add_stylist' method='post'>
+  <input type="text" name="name" placeholder="enter stylist">
+  <input type='submit' value="add">
+</form>
+                  
+      
+
+
