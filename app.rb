@@ -24,3 +24,18 @@ post '/add_stylist' do
   stylist.save()
   redirect'/'
 end
+
+post '/add_customer' do
+  name = params.fetch('name')
+  stylist_id = params.fetch('stylist_id')
+  customer = Customer.new({:name => name, :stylist_id => stylist_id,  :id => nil})
+  redirect "/stylists/#{stylist_id}"
+end
+
+get '/stylists/:id' do
+  id = params.fetch("id")
+  binding.pry
+  @stylist = Stylist.find_stylist_by_id(id)
+  @associated_customers = Customer.get_customers_for_stylist_id(id)
+  erb(:stylist)
+end

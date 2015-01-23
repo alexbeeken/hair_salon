@@ -62,6 +62,8 @@ describe('#get_customers_for_stylist_id') do
   it 'returns all customers associated with that stylist id' do
     test_customer = Customer.new({:name => 'Shirley', :stylist_id => 1, :id => nil})
     test_customer.save()
+    test_customer2 = Customer.new({:name => 'Shirley2', :stylist_id => 2, :id => nil})
+    test_customer2.save()
     expect(Customer.get_customers_for_stylist_id(1)).to(eq([test_customer]))
   end
 end

@@ -1,0 +1,25 @@
+<%= "<h1> #{@stylist.name} </h1>" %>
+
+<table>
+  <tr>
+    <th>
+      Customers
+    </th>
+  </tr>
+  <% if (@associated_customers != [])  %>
+      <% @associated_customers.each() do |customer| %>
+        <tr>
+          <td>
+            <%= customer.name  %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+</table>
+
+<form action='/add_customer' method='post'>
+  <input type="text" name="name" placeholder="enter customer">
+  <%= "<input type='hidden' name='stylist_id' value='#{@stylist.id}'>" %>
+  <input type='submit' value="add">
+</form>
+           
