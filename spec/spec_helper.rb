@@ -6,7 +6,7 @@ DB = PG::Connection.open(:dbname => 'test_salon')
 
 RSpec.configure do |config|
 config.after(:each) do
-DB.exec("DELETE FROM test_stylist;")
-  DB.exec("DELETE FROM test_clients;")
+DB.exec("DELETE FROM stylists;")
+  DB.exec("DELETE FROM customers;")
 end
 end
