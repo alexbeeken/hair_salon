@@ -12,6 +12,12 @@
           <td>
             <%= customer.name  %>
           </td>
+          <td>
+            <%= "<form action='/delete_customer' method='post'>
+                <input type='submit' value='delete'>
+                <input type='hidden' value='#{customer.id}' name='customer_id'>
+                <input type='hidden' value='#{@stylist.id}' name='stylist_id'>
+                </form>" %>
         </tr>
       <% end %>
     <% end %>
@@ -22,4 +28,3 @@
   <%= "<input type='hidden' name='stylist_id' value='#{@stylist.id}'>" %>
   <input type='submit' value="add">
 </form>
-           
