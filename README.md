@@ -13,7 +13,7 @@ This is a simple website to keep track of which clients your workers regularly s
 ```
 CREATE DATABASE salon;
 CREATE TABLE stylists (id SERIAL PRIMARY KEY, name VARCHAR);
-CREATE TABLE customers (id SERIAL PRIMARY KEY, name VARCHAR, styist_id INT);
+CREATE TABLE customers (id SERIAL PRIMARY KEY, name VARCHAR, stylist_id INT);
 ```
 
 (If you'd like to use a different database you'll have to change the database specified in line 8 of app.rb.)
@@ -31,7 +31,7 @@ If you haven't created the salon database yet you can just run these commands:
 ```
 CREATE DATABASE test_salon;
 CREATE TABLE stylists (id SERIAL PRIMARY KEY, name VARCHAR);
-CREATE TABLE customers (id SERIAL PRIMARY KEY, name VARCHAR, styist_id INT);
+CREATE TABLE customers (id SERIAL PRIMARY KEY, name VARCHAR, stylist_id INT);
 ```
 
 ## Contributing
