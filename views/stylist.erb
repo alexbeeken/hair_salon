@@ -1,32 +1,40 @@
 <%= "<h1> #{@stylist.name} </h1>" %>
 
-<table>
-  <tr>
-    <th>
-      Customers
-    </th>
-  </tr>
-  <% if (@associated_customers != [])  %>
-      <% @associated_customers.each() do |customer| %>
-        <tr>
-          <td>
-            <%= customer.name  %>
-          </td>
-          <td>
-            <%= "<form action='/delete_customer' method='post'>
-                <input type='submit' value='delete'>
-                <input type='hidden' value='#{customer.id}' name='customer_id'>
-                <input type='hidden' value='#{@stylist.id}' name='stylist_id'>
-                </form>" %>
-        </tr>
+<div id="customers_table">
+  <table class="table">
+    <tr>
+      <th>
+        Customers
+      </th>
+    </tr>
+    <% if (@associated_customers != [])  %>
+        <% @associated_customers.each() do |customer| %>
+          <tr>
+            <td>
+              <%= customer.name  %>
+            </td>
+            <td>
+              <%= "<form action='/delete_customer' method='post'>
+                  <input type='submit' value='delete'>
+                  <input type='hidden' value='#{customer.id}' name='customer_id'>
+                  <input type='hidden' value='#{@stylist.id}' name='stylist_id'>
+                  </form>" %>
+          </tr>
+        <% end %>
       <% end %>
-    <% end %>
-</table>
+  </table>
+</div>
 
-<form action='/add_customer' method='post'>
-  <input type="text" name="name" placeholder="enter customer">
-  <%= "<input type='hidden' name='stylist_id' value='#{@stylist.id}'>" %>
-  <input type='submit' value="add">
-</form>
+<br>
+
+<div id="add_customer">
+  <form action='/add_customer' method='post'>
+    <input type="text" name="name" placeholder="enter customer">
+      <%= "<input type='hidden' name='stylist_id' value='#{@stylist.id}'>" %>
+    <input type='submit' value="add">
+  </form>
+</div>
+
+<br>
 
 <a href='/'>Main Page</a>

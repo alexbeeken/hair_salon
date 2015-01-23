@@ -1,0 +1,114 @@
+
+body {
+  background-image: url("/img/background.jpg");
+  background-size: 1000px 700px;
+}
+
+#stylists_table {
+  background-color: white;
+  width: 50%;
+}
+
+body h1 {
+  font-family: 'frontenacbold';
+  color: white;
+  text-shadow: black 10px;
+}
+
+body table {
+  font-family: 'frontenacregular';
+}
+
+
+@font-face {
+  font-family: 'youreinvitedregular';
+  src: url('youreinvited-webfont.eot');
+  src: url('youreinvited-webfont.eot?#iefix') format('embedded-opentype'),
+  url('youreinvited-webfont.woff2') format('woff2'),
+  url('youreinvited-webfont.woff') format('woff'),
+  url('youreinvited-webfont.ttf') format('truetype'),
+  url('youreinvited-webfont.svg#youreinvitedregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'frontenacbold';
+  src: url('frontenac-bold-webfont.eot');
+  src: url('frontenac-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('frontenac-bold-webfont.woff2') format('woff2'),
+  url('frontenac-bold-webfont.woff') format('woff'),
+  url('frontenac-bold-webfont.ttf') format('truetype'),
+  url('frontenac-bold-webfont.svg#frontenacbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'frontenacitalic';
+  src: url('frontenac-italic-webfont.eot');
+  src: url('frontenac-italic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('frontenac-italic-webfont.woff2') format('woff2'),
+  url('frontenac-italic-webfont.woff') format('woff'),
+  url('frontenac-italic-webfont.ttf') format('truetype'),
+  url('frontenac-italic-webfont.svg#frontenacitalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'frontenacregular';
+  src: url('frontenac-webfont.eot');
+  src: url('frontenac-webfont.eot?#iefix') format('embedded-opentype'),
+  url('frontenac-webfont.woff2') format('woff2'),
+  url('frontenac-webfont.woff') format('woff'),
+  url('frontenac-webfont.ttf') format('truetype'),
+  url('frontenac-webfont.svg#frontenacregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'frontenac_small_capsregular';
+  src: url('frontenac_smallcaps-webfont.eot');
+  src: url('frontenac_smallcaps-webfont.eot?#iefix') format('embedded-opentype'),
+  url('frontenac_smallcaps-webfont.woff2') format('woff2'),
+  url('frontenac_smallcaps-webfont.woff') format('woff'),
+  url('frontenac_smallcaps-webfont.ttf') format('truetype'),
+  url('frontenac_smallcaps-webfont.svg#frontenac_small_capsregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'frontenac_small_capsitalic';
+  src: url('frontenac_smallcaps_italic-webfont.eot');
+  src: url('frontenac_smallcaps_italic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('frontenac_smallcaps_italic-webfont.woff2') format('woff2'),
+  url('frontenac_smallcaps_italic-webfont.woff') format('woff'),
+  url('frontenac_smallcaps_italic-webfont.ttf') format('truetype'),
+  url('frontenac_smallcaps_italic-webfont.svg#frontenac_small_capsitalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}

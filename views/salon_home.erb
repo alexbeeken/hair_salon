@@ -1,6 +1,9 @@
 <h1> Welcome to Big City "Salon" </h1>
 
-  <table>
+<br>
+
+<div id="stylists_table">
+  <table class="table">
     <tr>
       <th>
         Stylists
@@ -37,8 +40,13 @@
     <% end %>
     <% end %>
   </table>
+</div>
 
-<form action='/add_stylist' method='post'>
-  <input type="text" name="name" placeholder="enter stylist">
-  <input type='submit' value="add">
-</form>
+<br>
+
+<div id="add_stylist">
+  <form action='/add_stylist' method='post'>
+    <input type="text" name="name" placeholder="enter stylist">
+    <input type='submit' value="add">
+  </form>
+</div>
